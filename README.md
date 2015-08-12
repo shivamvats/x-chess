@@ -1,8 +1,8 @@
 # x-chess
 
-Hash-table for all possible types of pieces.
+* Hash-table for all possible types of pieces.
 
-Number white pieces as positive and black pieces as 
+* Number white pieces as positive and black pieces as 
 negative.
 
 ### Pawn:
