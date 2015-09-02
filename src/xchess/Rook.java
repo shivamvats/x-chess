@@ -20,6 +20,7 @@ public class Rook extends Piece {
 			{
 				moves.add(new Point(i,y));
 			}
+                        if(Game.cb.getElement(i,y)!=0) break;
 		}
 		/*
 		 * 	Checking all possible moves on the left hand side of the rook.
@@ -30,6 +31,8 @@ public class Rook extends Piece {
 			{
 				moves.add(new Point(i,y));
 			}
+                        if(Game.cb.getElement(i,y)!=0) break;
+
 		}
 		/*
 		 * 	Checking all possible moves above the rook.
@@ -40,6 +43,8 @@ public class Rook extends Piece {
 			{
 				moves.add(new Point(x,i));
 			}
+                        if(Game.cb.getElement(x,i)!=0) break;
+
 		}
 		/*
 		 * 	Checking all possible moves below the rook.
@@ -50,6 +55,8 @@ public class Rook extends Piece {
 			{
 				moves.add(new Point(x,i));
 			}
+                        if(Game.cb.getElement(x,i)!=0) break;
+
 		}
 		return moves;
 		
