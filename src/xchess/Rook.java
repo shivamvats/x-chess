@@ -1,7 +1,7 @@
 package xchess;
 import java.util.*;
 
-public class Rook {
+public class Rook extends Piece {
 	private ArrayList<Point> moves;										//	Vector to store my possible moves
 
 	public ArrayList<Point> getPossibleMoves(Point p)
