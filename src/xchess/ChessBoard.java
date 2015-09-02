@@ -40,4 +40,8 @@ public class ChessBoard {
 			System.out.println();
 		}
 	}
+	
+	public void set(Point pt, int piece) {
+		board[pt.getX()][pt.getY()] = piece;
+	}
 }

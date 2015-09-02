@@ -18,8 +18,10 @@ public class Point {
 		else
 			return false;
 	}
+
 	public String toString()
 	{
-		return("(" +x+","+y+")");
+		return( "(" + x + "," + y + ")" );
 	}
 } 
+
