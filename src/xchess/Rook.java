@@ -7,8 +7,10 @@ public class Rook {								//	Vector to store my possible moves
 	{
 		ArrayList<Point> moves= new ArrayList<Point>();
 		int x=p.getX(),y=p.getY();
-		System.out.println("Accessing piece at location ("+x+","+y+")");	
+
+		System.out.println( "Accessing piece at location (" + x + "," + y + ")" );	
 		int sign = (int)Math.signum(Game.cb.getElement(x,y));
+
 		/* 
 		 * 	Checking all possible moves on the right hand side of the rook.
 		 */
