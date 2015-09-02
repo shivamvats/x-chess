@@ -38,35 +38,35 @@ public class ChessBoard {
 	private void fillBoard() {
 		
 		//Rooks
-		board[7][0] = -2;
+		board[0][7] = -2;
 		board[7][7] = -2;
 		board[0][0] = 2;
-		board[0][7] = 2;
+		board[7][0] = 2;
 		
 		//Knights
-		board[7][1] = -3;
-		board[7][6] = -3;
-		board[0][1] = 3;
-		board[0][6] = 3;
+		board[1][7] = -3;
+		board[6][7] = -3;
+		board[1][0] = 3;
+		board[6][0] = 3;
 		
 		//Bishops
-		board[7][2] = -4;
-		board[7][5] = -4;
-		board[0][2] = 4;
-		board[0][5] = 4;
+		board[2][7] = -4;
+		board[5][7] = -4;
+		board[2][0] = 4;
+		board[5][0] = 4;
 		
 		//Queen and King
-		board[7][3] = -5;
-		board[7][4] = -6;
-		board[0][3] = 5;
-		board[0][4] = 6;
+		board[3][7] = -5;
+		board[4][7] = -6;
+		board[3][0] = 5;
+		board[4][0] = 6;
 		
 		//Pawns
 		for(int i=0; i<8; i++)
-			board[6][i] = -1;
+			board[i][6] = -1;
 		
 		for(int i=0; i<8; i++)
-			board[1][i] = 1;
+			board[i][1] = 1;
 	}
 	/**
 	 * Print the element info at location (a,b) of chess board to the screen.
@@ -82,15 +82,19 @@ public class ChessBoard {
 	 * Print the current state of chess board to the screen.
 	 */
 	public void getState() {
-		for(int i=rows-1; i>=0; i--) {
-			for(int j=0; j<=cols-1; j++) {
+		for(int j=cols-1; j>=0; j--) {
+			for(int i=0; i<=rows-1; i++) {
 				System.out.print("| ");
-				if(i<6)
+				if(j<6)
 					System.out.print(" ");
 				System.out.print(board[i][j] + " ");
 			}
 			System.out.print("|");
 			System.out.println();
 		}
+	}
+	
+	public void set(Point pt, int piece) {
+		board[pt.getX()][pt.getY()] = piece;
 	}
 }
