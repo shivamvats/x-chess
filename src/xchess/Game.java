@@ -1,8 +1,8 @@
 package xchess;
 
 public class Game {
-	public static ChessBoard cb;
-	public static void main() {
-		cb = new ChessBoard();
+	public static ChessBoard cb = new ChessBoard();
+	public static void main(String[] args) {
+		cb.getState();
 	}
 }
