@@ -8,7 +8,7 @@ public class Rook {
 	{
 		moves= new ArrayList<Point>();
 		int x=p.getX(),y=p.getY();
-		System.out.println("Accessing piece at location ("+x+","+y+")");	
+		System.out.println( "Accessing piece at location (" + x + "," + y + ")" );	
 		int ele=Game.cb.getElement(x,y);								//	Accessing info about the the element we want to move
 		int sign;
 		if(ele!=0)
