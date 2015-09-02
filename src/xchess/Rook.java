@@ -1,30 +1,20 @@
 package xchess;
 import java.util.*;
 
-public class Rook {
-	private ArrayList<Point> moves;										//	Vector to store my possible moves
+public class Rook {								//	Vector to store my possible moves
 
 	public ArrayList<Point> getPossibleMoves(Point p)
 	{
-		moves= new ArrayList<Point>();
+		ArrayList<Point> moves= new ArrayList<Point>();
 		int x=p.getX(),y=p.getY();
 		System.out.println("Accessing piece at location ("+x+","+y+")");	
-		int ele=Game.cb.getElement(x,y);								//	Accessing info about the the element we want to move
-		int sign;
-		if(ele!=0)
-			sign=ele/Math.abs(ele);										//	Extracting its sign
-		else sign=1;
+		int sign = (int)Math.signum(Game.cb.getElement(x,y));
 		/* 
 		 * 	Checking all possible moves on the right hand side of the rook.
 		 */
 		for(int i=x+1;i<8;i++)
 		{
-			int current=Game.cb.getElement(i,y);
-			if(current==0)
-			{
-				moves.add(new Point(i,y));
-			}
-			else if(current/Math.abs(current)!=sign)
+			if((int)Math.signum(Game.cb.getElement(i,y))!=sign)
 			{
 				moves.add(new Point(i,y));
 			}
@@ -34,12 +24,7 @@ public class Rook {
 		 */
 		for(int i=x-1;i>-1;i--)
 		{
-			int current=Game.cb.getElement(i,y);
-			if(current==0)
-			{
-				moves.add(new Point(i,y));
-			}
-			else if(current/Math.abs(current)!=sign)
+			if((int)Math.signum(Game.cb.getElement(i,y))!=sign)
 			{
 				moves.add(new Point(i,y));
 			}
@@ -49,27 +34,17 @@ public class Rook {
 		 */
 		for(int i=y+1;i<8;i++)
 		{
-			int current=Game.cb.getElement(x,i);
-			if(current==0)
-			{
-				moves.add(new Point(x,i));
-			}
-			else if(current/Math.abs(current)!=sign)
+			if((int)Math.signum(Game.cb.getElement(x,i))!=sign)
 			{
 				moves.add(new Point(x,i));
 			}
 		}
 		/*
-		 * 	Checking all possible moves belowthe rook.
+		 * 	Checking all possible moves below the rook.
 		 */
 		for(int i=y-1;i>-1;i--)
 		{
-			int current=Game.cb.getElement(x,i);
-			if(current==0)
-			{
-				moves.add(new Point(x,i));
-			}
-			else if(current/Math.abs(current)!=sign)
+			 if((int)Math.signum(Game.cb.getElement(x,i))!=sign)
 			{
 				moves.add(new Point(x,i));
 			}
