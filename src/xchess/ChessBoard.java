@@ -18,6 +18,16 @@ public class ChessBoard {
 	private int[][] board = new int[rows][cols];
 	
 	/**
+	 * Print the element info at location (a,b) of chess board to the screen.
+	 * Return -7 if location is invalid
+	 */
+	public int getElement(int a, int b)
+	{
+		if(a>-1 && b>-1 && a<8 && b<8) return board[a][b];
+		else return -7;
+	}
+	
+	/**
 	 * Print the current state of chess board to the screen.
 	 */
 	public void getState() {
