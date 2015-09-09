@@ -97,4 +97,18 @@ public class ChessBoard {
 	public void set(Point pt, int piece) {
 		board[pt.getX()][pt.getY()] = piece;
 	}
+        
+        public static Point bKing =new Point(4,7);
+        public static Point wKing =new Point(4,0);
+        
+        public void makeMove(Point a, Point b)
+        {
+            //-------- Update positions of white and black king ----------
+            if(a==bKing) bKing=b;
+            if(a==wKing) wKing=b;
+            //-------- Make the move -------------
+            board[b.getX()][b.getY()] = board[a.getX()][a.getY()];
+            board[a.getX()][a.getY()] = 0;
+            
+        }
 }
