@@ -3,7 +3,7 @@ package xchess;
 import java.util.*;
 
 public class King extends Piece {
-	public ArrayList<Point> getPossibleMoves(Point current) {
+	public static ArrayList<Point> getPossibleMoves(Point current) {
 		// How to make current immutable??
 		// const doesn't work in java.
 		 
