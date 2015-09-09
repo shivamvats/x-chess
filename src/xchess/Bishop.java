@@ -11,43 +11,35 @@ public class Bishop extends Piece {
 		System.out.println( "Accessing piece at location (" + x + "," + y + ")" );
 		int sign = (int)Math.signum(Game.cb.getElement(x,y));
 
-		for(int i=x+1;i<8;i++)
+		for(int i=x+1,j=y+1;i<8 && j<8;i++,j++)
 		{
-			
-			for(int j=y+1;j<8;j++)
-			{
-				if((int)Math.signum(Game.cb.getElement(i,j))!=sign)
-					moves.add(new Point(i,j));
-				if(Game.cb.getElement(i,j)!=0)
-					break;
-			}
-			
-			for(int j=y-1;j>=0;j--)
-			{
-				if((int)Math.signum(Game.cb.getElement(i,j))!=sign)
-					moves.add(new Point(i,j));
-				if(Game.cb.getElement(i,j)!=0)
-					break;
-			}
+			if((int)Math.signum(Game.cb.getElement(i,j))!=sign)
+				moves.add(new Point(i,j));
+			if(Game.cb.getElement(i,j)!=0)
+				break;
 		}
-		for(int i=x-1;i>=0;i--)
+		
+		for(int i=x+1,j=y-1; i<8 && j>=0; i++,j--)
 		{
-
-			for(int j=y+1;j<8;j++)
-			{
 				if((int)Math.signum(Game.cb.getElement(i,j))!=sign)
 					moves.add(new Point(i,j));
 				if(Game.cb.getElement(i,j)!=0)
 					break;
-			}
-			
-			for(int j=y-1;j>=0;j--)
-			{
+		}
+		
+		for(int i=x-1,j=y+1;i>=0 && j<8;i--,j++)
+		{
 				if((int)Math.signum(Game.cb.getElement(i,j))!=sign)
 					moves.add(new Point(i,j));
 				if(Game.cb.getElement(i,j)!=0)
 					break;
-			}
+		}	
+		for(int i=x-1,j=y-1;i>=0 && j>=0;i--,j--)
+		{
+			if((int)Math.signum(Game.cb.getElement(i,j))!=sign)
+					moves.add(new Point(i,j));
+				if(Game.cb.getElement(i,j)!=0)
+					break;
 		}
 		return moves;
 	}
