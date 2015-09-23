@@ -74,7 +74,7 @@ public class ChessBoard {
 	 */
 	public int getElement(int a, int b)
 	{
-		if(a>-1 && b>-1 && a<8 && b<8) return board[a][b];
+		if(a>-1 && b>-1 && a<rows && b<cols) return board[a][b];
 		else return -7;
 	}
 	
